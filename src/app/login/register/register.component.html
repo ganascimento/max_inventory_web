@@ -1,0 +1,75 @@
+<div class="body-content">
+    <div class="d-flex justify-content-center mb-4">
+        <h3>Registrar</h3>
+    </div>
+
+    <div class="content-input mb-4">
+        <label for="">Nome</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="content-enter">
+                <input type="text" placeholder="Informe seu nome" />
+            </div>
+        </div>
+    </div>
+
+    <div class="content-input mb-4">
+        <label for="">Sobrenome</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa fa-user"></i>
+            </div>
+            <div class="content-enter">
+                <input type="text" placeholder="Informe seu sobrenome" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-input mb-4">
+        <label for="">E-mail</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa fa-envelope"></i>
+            </div>
+            <div class="content-enter">
+                <input type="text" placeholder="Insira seu e-mail" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-input mb-4">
+        <label for="">Senha</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa fa-lock"></i>
+            </div>
+            <div class="content-enter">
+                <input type="password" placeholder="Insira sua senha" />
+            </div>
+        </div>
+    </div>
+
+    <div class="content-input mb-4">
+        <label for="">Confirmar senha:</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa fa-lock"></i>
+            </div>
+            <div class="content-enter">
+                <input type="password" placeholder="Confirme sua senha" />
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-4 content-btn">
+        <a class="login-btn btn-primary" routerLink="/home">
+            Registrar
+        </a>
+    </div>
+    
+    <div class="mt-5 text-center">
+        Já está cadastrado? <a class="register-btn" (click)="goToAuth()">Fazer login</a>
+    </div>
+</div>
