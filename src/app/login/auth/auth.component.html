@@ -3,35 +3,17 @@
         <h3>Login</h3>
     </div>
     
-    <div class="content-input mb-4">
-        <label for="">E-mail</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-envelope"></i>
-            </div>
-            <div class="content-enter">
-                <input type="text" placeholder="Insira seu e-mail" />
-            </div>
-        </div>
-    </div>
+    <form novalidate [formGroup]="authForm">
+        <mi-input label="E-mail" icon="fa-envelope" errorMessage="O e-mail deve conter no minimo 8 caracteres">
+            <input class="input-auth" type="text" formControlName="email" placeholder="Insira seu e-mail" />
+        </mi-input>
+
+        <mi-input label="Senha" icon="fa-lock" errorMessage="A senha deve conter no minimo 8 caracteres">
+            <input class="input-auth" type="password" formControlName="password" placeholder="Insira sua senha" />
+        </mi-input>
+    </form>
     
-    <div class="content-input mb-4">
-        <label for="">Senha</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-lock"></i>
-            </div>
-            <div class="content-enter">
-                <input type="password" placeholder="Insira sua senha" />
-            </div>
-        </div>
-    </div>
-    
-    <div class="mt-4 content-btn">
-        <a class="login-btn btn-primary" routerLink="/home">
-            Login
-        </a>
-    </div>
+    <mi-auth-btn [status]="requestStatus" [disabled]="authForm.valid" (onTap)="login(authForm.value)"></mi-auth-btn>
     
     <div class="mt-5 text-center">
         Ainda não está cadastrado? <a class="register-btn" (click)="goToRegister()">Cadastra-se agora</a>

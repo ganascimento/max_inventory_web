@@ -1,0 +1,64 @@
+.content {
+    padding-top: 80px;
+    height: 100%;
+}
+
+.table-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3px;
+}
+.table-action a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    width: 41px;
+    height: 41px;
+}
+.table-action a:hover {
+    background-color: rgba(0,0,0,.05);
+    border-radius: 30px;
+}
+.table-action a:active {
+    background-color: rgba(0,0,0,.15);
+    font-size: 20px;
+}
+
+.card-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    padding-left: 20px;
+    padding-right: 20px;    
+    color: white;
+}
+.card-icon {
+    font-size: 50px;
+}
+.card-info-value {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.card-info-desc {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+.card-blue {
+    background-color: #00bbd4;
+}
+.card-red {
+    background-color: #fe5722;
+}
+.card-green {
+    background-color: #009788;
+}

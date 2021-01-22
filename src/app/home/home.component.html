@@ -1,1 +1,84 @@
-<p>home works!</p>
+<mi-bar></mi-bar>
+
+<div class="container content">
+
+    <div class="row mb-2">
+        <div class="col-4">
+            <div class="card-item card-blue">
+                <div class="card-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div>
+                    <p class="card-info-value">50</p>
+                    <p class="card-info-desc">Produto cadastrados</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card-item card-red">
+                <div class="card-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div>
+                    <p class="card-info-value">1</p>
+                    <p class="card-info-desc">Produtos com inventário baixo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="card-item card-green">
+                <div class="card-icon">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div>
+                    <p class="card-info-value">R$ 3500,00</p>
+                    <p class="card-info-desc">Valor total de estoque</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="btn btn-success mb-2" routerLink="/product">
+        <i class="fa fa-plus"></i>
+        Adicionar
+    </button>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th width="35%">Nome</th>
+                <th width="15%">Valor</th>
+                <th width="20%">Unidade de medida</th>
+                <th width="15%">Marca</th>
+                <th width="15%">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Teste</td>
+                <td>R$ 2.00</td>
+                <td>Unitário</td>
+                <td>Marca</td>
+                <td class="table-action">
+                    <a><i class="fa fa-eye text-primary"></i></a>
+                    <a><i class="fa fa-edit text-success"></i></a>
+                    <a><i class="fa fa-trash text-danger"></i></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Teste</td>
+                <td>R$ 2.00</td>
+                <td>Unitário</td>
+                <td>Marca</td>
+                <td class="table-action">
+                    <a><i class="fa fa-eye text-primary"></i></a>
+                    <a><i class="fa fa-edit text-success"></i></a>
+                    <a><i class="fa fa-trash text-danger"></i></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

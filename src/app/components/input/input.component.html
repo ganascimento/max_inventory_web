@@ -1,0 +1,17 @@
+<div class="mb-3">
+    <div class="content-input">
+        <label>{{ label }}</label>
+        <div>
+            <div class="content-icon">
+                <i class="fa {{ icon }}"></i>
+            </div>
+            <div class="content-enter">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+    <div class="ml-2">
+        <span class="text-success" *ngIf="hasSuccess()"><i class="fa fa-check"></i> Ok</span>
+        <span class="text-danger" *ngIf="hasError()"><i class="fa fa-times"></i> {{errorMessage}}</span>
+    </div>
+</div>

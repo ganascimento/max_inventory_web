@@ -1,0 +1,45 @@
+.bar-style {    
+    background-color: #062bb2;
+    position: fixed;
+    top: 0;
+}
+
+.content {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.btn-bar.active {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-bar {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.btn-bar:hover {
+    text-decoration: none;
+    background-color: rgba(255,255,255,.2);
+}
+.btn-bar:not(:last-child) {
+    margin-right: 15px;
+}
+
+.logout {
+    font-size: 20px;
+}

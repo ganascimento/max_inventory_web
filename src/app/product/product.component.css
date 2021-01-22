@@ -1,0 +1,18 @@
+h3 {
+    font-weight: bold;
+}
+
+.content {
+    padding-top: 90px;
+    height: 100%;
+}
+
+.input-product {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.btn {
+    margin-left: 10px;
+}

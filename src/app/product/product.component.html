@@ -1,0 +1,48 @@
+<mi-bar></mi-bar>
+
+<div class="container content">
+    <div class="text-center mb-5">
+        <h3>Adicionar produtos</h3>
+    </div>
+
+    <div>
+        <form novalidate [formGroup]="productForm">
+            <div class="row">
+                <div class="col-sm-12 col-lg-7">
+                    <mi-input label="Nome do produto" icon="fa-box" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="text" formControlName="name" placeholder="Informe o nome do produto" />
+                    </mi-input>
+                </div>
+                <div class="col-sm-12 col-lg-5">
+                    <mi-input label="Identificação" icon="fa-passport" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="number" formControlName="identCode" placeholder="Informe o código de identificação" />
+                    </mi-input>
+                </div>
+                <div class="col-sm-12 col-lg-3">
+                    <mi-input label="Valor" icon="fa-money-bill-wave" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="number" formControlName="value" placeholder="Informe o valor" />
+                    </mi-input>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <mi-input label="Unidade de medida" icon="fa-ruler" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="text" formControlName="unitType" placeholder="Informe a unidade de medida" />
+                    </mi-input>
+                </div>
+                <div class="col-sm-12 col-lg-5">
+                    <mi-input label="Marca" icon="fa-copyright" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="text" formControlName="brand" placeholder="Informe a marca" />
+                    </mi-input>
+                </div>
+                <div class="col-12">
+                    <mi-input label="Descrição" icon="fa-file" errorMessage="Campo obrigatório">
+                        <input class="input-product" type="text" formControlName="description" placeholder="Informe a descrição" />
+                    </mi-input>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-secondary"><i class="fa fa-times"></i> limpar</button>
+        <button class="btn btn-success" [disabled]="!productForm.valid"><i class="fa fa-plus"></i> Cadastrar</button>
+    </div>
+</div>

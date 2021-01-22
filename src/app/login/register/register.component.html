@@ -3,70 +3,32 @@
         <h3>Registrar</h3>
     </div>
 
-    <div class="content-input mb-4">
-        <label for="">Nome</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-user"></i>
-            </div>
-            <div class="content-enter">
-                <input type="text" placeholder="Informe seu nome" />
-            </div>
-        </div>
-    </div>
+    <form novalidate [formGroup]="registerForm">
+        <mi-input label="Nome" icon="fa-user">
+            <input class="input-auth" type="text" formControlName="firstname" placeholder="Informe seu nome" />
+        </mi-input>
+    
+        <mi-input label="Sobrenome" icon="fa-user">
+            <input class="input-auth" type="text" formControlName="lastname" placeholder="Informe seu sobrenome" />
+        </mi-input>
+    
+        <mi-input label="E-mail" icon="fa-envelope">
+            <input class="input-auth" type="text" formControlName="email" placeholder="Insira seu e-mail" />
+        </mi-input>
+    
+        <mi-input label="Senha" icon="fa-lock">
+            <input class="input-auth" type="text" formControlName="password" placeholder="Insira sua senha" />
+        </mi-input>
+    
+        <mi-input label="Confirmar senha" icon="fa-lock">
+            <input class="input-auth" type="text" formControlName="email" placeholder="Confirme sua senha" />
+        </mi-input>
+    </form>
 
-    <div class="content-input mb-4">
-        <label for="">Sobrenome</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-user"></i>
-            </div>
-            <div class="content-enter">
-                <input type="text" placeholder="Informe seu sobrenome" />
-            </div>
-        </div>
-    </div>
-    
-    <div class="content-input mb-4">
-        <label for="">E-mail</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-envelope"></i>
-            </div>
-            <div class="content-enter">
-                <input type="text" placeholder="Insira seu e-mail" />
-            </div>
-        </div>
-    </div>
-    
-    <div class="content-input mb-4">
-        <label for="">Senha</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-lock"></i>
-            </div>
-            <div class="content-enter">
-                <input type="password" placeholder="Insira sua senha" />
-            </div>
-        </div>
-    </div>
-
-    <div class="content-input mb-4">
-        <label for="">Confirmar senha:</label>
-        <div>
-            <div class="content-icon">
-                <i class="fa fa-lock"></i>
-            </div>
-            <div class="content-enter">
-                <input type="password" placeholder="Confirme sua senha" />
-            </div>
-        </div>
-    </div>
-    
     <div class="mt-4 content-btn">
-        <a class="login-btn btn-primary" routerLink="/home">
+        <button class="login-btn" [class.disabled]="!registerForm.valid" routerLink="/home" [disabled]="!registerForm.valid" (click)="registerUser(registerForm.value)">
             Registrar
-        </a>
+        </button>
     </div>
     
     <div class="mt-5 text-center">
