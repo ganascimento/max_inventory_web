@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginModel } from 'src/app/shared/models/login.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { RequestStatus } from 'src/app/constants/request.status.constant';
+import { NotificationService } from 'src/app/shared/services/notification.service';
 
 @Component({
   selector: 'mi-auth',
@@ -15,22 +16,22 @@ export class AuthComponent implements OnInit {
   public authForm: FormGroup;
   private emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService, private notificationService: NotificationService) { }
 
   login(user: LoginModel) {
     this.requestStatus = RequestStatus.isLoading;
 
-    setInterval(() => {
-      this.requestStatus = RequestStatus.none;
-    }, 4000);
-
-    // this.authService.login(user)
-    //   .subscribe(resp => {
-    //     if (resp.success)
-    //       this.requestStatus = RequestStatus.success;
-    //     else
-    //       this.requestStatus = RequestStatus.error;
-    //   });
+    setTimeout(() => {
+      this.authService.login(user)
+        .subscribe((resp: any) => {
+          if (resp.success)
+            this.router.navigateByUrl('/home');            
+        }, () => {
+          this.requestStatus = RequestStatus.error;
+          this.notificationService.notify('Login ou senha incorretos');
+        });
+      
+    }, 500);
   }
 
   goToRegister() {

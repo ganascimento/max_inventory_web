@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { RegisterModel } from 'src/app/shared/models/login.model';
+import { RequestStatus } from 'src/app/constants/request.status.constant';
 
 @Component({
   selector: 'mi-register',
@@ -10,8 +11,8 @@ import { RegisterModel } from 'src/app/shared/models/login.model';
   styleUrls: ['../login.component.css']
 })
 export class RegisterComponent implements OnInit {
-  public registerForm: FormGroup;
-  
+  public requestStatus: number = RequestStatus.none;
+  public registerForm: FormGroup;  
   private emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   constructor(private router: Router, private formBuilder: FormBuilder, private authService: AuthService) { }

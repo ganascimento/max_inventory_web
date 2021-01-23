@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { RequestStatus } from 'src/app/constants/request.status.constant';
 
 @Component({
   selector: 'mi-auth-btn',
@@ -19,6 +20,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]
 })
 export class AuthBtnComponent implements OnInit {
+  @Input() public text: string;
   @Input() public status: number;
   @Input() public disabled: boolean;
   @Output() public onTap = new EventEmitter();
@@ -26,7 +28,7 @@ export class AuthBtnComponent implements OnInit {
   public btnStatus: string = 'none';
 
   ngDoCheck() {
-    this.btnStatus = this.status == 0 ? 'none' : 'isLoading';
+    this.btnStatus = this.status == RequestStatus.isLoading ? 'isLoading' : 'none';
   }
 
   constructor() { }

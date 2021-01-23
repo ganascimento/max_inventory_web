@@ -13,7 +13,7 @@
         </mi-input>
     </form>
     
-    <mi-auth-btn [status]="requestStatus" [disabled]="authForm.valid" (onTap)="login(authForm.value)"></mi-auth-btn>
+    <mi-auth-btn text="Login" [status]="requestStatus" [disabled]="authForm.valid" (onTap)="login(authForm.value)"></mi-auth-btn>
     
     <div class="mt-5 text-center">
         Ainda não está cadastrado? <a class="register-btn" (click)="goToRegister()">Cadastra-se agora</a>

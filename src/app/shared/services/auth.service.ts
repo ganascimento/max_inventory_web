@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { URL_API } from '../../constants/api.constant';
 import { TokenModel } from '../models/token.model';
@@ -15,6 +15,13 @@ export class AuthService {
 
     public isLogged(): boolean {
         return this.token != null;
+    }
+
+    public getToken(): string {
+        if (this.token)
+            return `Bearer ${this.token.token}`;
+        
+        return '';
     }
 
     public logout(): void {

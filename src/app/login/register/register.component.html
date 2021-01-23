@@ -25,11 +25,7 @@
         </mi-input>
     </form>
 
-    <div class="mt-4 content-btn">
-        <button class="login-btn" [class.disabled]="!registerForm.valid" routerLink="/home" [disabled]="!registerForm.valid" (click)="registerUser(registerForm.value)">
-            Registrar
-        </button>
-    </div>
+    <mi-auth-btn text="Registrar" [status]="requestStatus" [disabled]="registerForm.valid" (onTap)="registerUser(registerForm.value)"></mi-auth-btn>
     
     <div class="mt-5 text-center">
         Já está cadastrado? <a class="register-btn" (click)="goToAuth()">Fazer login</a>

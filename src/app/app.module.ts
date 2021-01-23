@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,13 @@ import { BarComponent } from './components/bar/bar.component';
 import { InputComponent } from './components/input/input.component';
 import { ProductComponent } from './product/product.component';
 import { AuthBtnComponent } from './components/auth-btn/auth-btn.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 import { AuthService } from './shared/services/auth.service';
+import { NotificationService } from './shared/services/notification.service';
 import { AuthGuard } from './shared/utils/auth.guard';
+import { ApplicationErrorHandler } from './shared/utils/application.error.handler';
+import { ApplicationHttpInterceptor } from './shared/utils/application.http.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,8 @@ import { AuthGuard } from './shared/utils/auth.guard';
     BarComponent,
     InputComponent,
     ProductComponent,
-    AuthBtnComponent
+    AuthBtnComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +42,16 @@ import { AuthGuard } from './shared/utils/auth.guard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [
+    AuthService,
+    NotificationService,
+    AuthGuard,
+    { provide: ErrorHandler, useClass: ApplicationErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: ApplicationHttpInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

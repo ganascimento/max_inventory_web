@@ -1,3 +1,9 @@
 <div class="mt-4 content-btn">
-    <button [@loadingIndicator]="btnStatus" class="login-btn" [class.disabled]="!disabled" (click)="emmitClick()" [disabled]="!disabled">Login</button>
+    <button [@loadingIndicator]="btnStatus" class="login-btn" [class.disabled]="!disabled" (click)="emmitClick()" [disabled]="!disabled">
+        <div *ngIf="btnStatus == 'isLoading'" class="uploader-status">
+            <mat-spinner [strokeWidth]="5" [diameter]="40"></mat-spinner>
+        </div>
+        <p *ngIf="btnStatus == 'none'">{{ text }}</p>
+    </button>
 </div>
+
